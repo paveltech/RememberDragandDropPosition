@@ -23,22 +23,14 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements OnCustomerListChangedListener , OnStartDragListener{
 
-
     public RecyclerView recyclerView;
     public CustomerListAdapter adapter;
     public ItemTouchHelper itemTouchHelper;
     public List<Customer> customerList;
-
-
-
     public SharedPreferences sharedPreferences;
     public SharedPreferences.Editor editor;
-
-
     public static final String LIST_OF_SORTED_DATA_ID = "json_list";
     public static final String PREFERANCE_FILE = "preferance_file";
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,15 +38,10 @@ public class MainActivity extends AppCompatActivity implements OnCustomerListCha
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
         sharedPreferences = this.getApplicationContext().getSharedPreferences(PREFERANCE_FILE , Context.MODE_PRIVATE);
         editor = sharedPreferences.edit();
-
         setUpRecycleView();
     }
-
-
-
 
     public void setUpRecycleView(){
         recyclerView = (RecyclerView) findViewById(R.id.note_recycler_view);
@@ -69,9 +56,6 @@ public class MainActivity extends AppCompatActivity implements OnCustomerListCha
         itemTouchHelper.attachToRecyclerView(recyclerView);
         recyclerView.setAdapter(adapter);
     }
-
-
-
 
     public List<Customer> getCustomerList(){
         List<Customer> customerList = SampleData.addSampleCustomers();

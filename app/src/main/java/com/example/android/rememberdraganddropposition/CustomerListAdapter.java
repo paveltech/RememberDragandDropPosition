@@ -57,7 +57,7 @@ public class CustomerListAdapter extends RecyclerView.Adapter<CustomerListAdapte
 
         holder.cuctomerName.setText(customer.getName());
         holder.customerEmail.setText(customer.getEmailAddress());
-      
+
 
 
         holder.handleView.setOnTouchListener(new View.OnTouchListener() {
